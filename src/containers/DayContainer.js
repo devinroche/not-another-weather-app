@@ -6,7 +6,7 @@ import {getWeekForcast} from './../redux/week';
 
 import Day from '../components/Day'
 
-class WeatherContainer extends Component {
+class DayContainer extends Component {
     render(){
         const { day } = this.props
         return (
@@ -17,17 +17,13 @@ class WeatherContainer extends Component {
     }
 }
   
-  const mapStateToProps = state => {
-      console.log(state)
-        return {
-            day: state.day,
-        };
-  };
+const mapStateToProps = state => {
+    console.log(state)
+    return {
+        day: state.day,
+    };
+};
   
-  const mapDispatchToProps = {
-    getWeather,
-    getWeekForcast
-  };
   
-  export default connect(mapStateToProps, mapDispatchToProps)(WeatherContainer);
+  export default connect(mapStateToProps, mapDispatchToProps)(DayContainer);
   

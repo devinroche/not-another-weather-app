@@ -9,8 +9,8 @@ class Day extends Component {
     render(){
         return (
             <View style={{flex: 1}}>
-                <Header {...this.props.day}/>
-                <Body {...this.props.day}/>
+                <Header {...this.props}/>
+                <Body {...this.props}/>
             </View>
         )
     }

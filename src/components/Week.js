@@ -9,7 +9,7 @@ class Week extends Component {
     render(){
         return (
             <View style={{flex: 1}}>
-                <Footer {...this.props.day}/>
+                <Footer {...this.props}/>
             </View>
         )
     }

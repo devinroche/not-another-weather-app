@@ -4,7 +4,6 @@ import {connect} from 'react-redux';
 import {getWeather} from './../redux/reducer';
 import {getWeekForcast} from './../redux/week';
 
-import Weather from './Weather'
 import DayContainer from './DayContainer';
 import WeekContainer from './WeekContainer';
 

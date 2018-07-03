@@ -4,11 +4,11 @@ import {connect} from 'react-redux';
 
 class Body extends Component {
     render(){
-        console.log(this.props)
-        const { weather } = this.props
+        const { day } = this.props
+
         return (
             <View style={styles.mid}>
-                <Text style={styles.header}>{weather.main.temp}&#176;F</Text> 
+                <Text style={styles.header}>{day.weather.main.temp}&#176;F</Text> 
             </View>
         )
     }

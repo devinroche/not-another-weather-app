@@ -21,25 +21,23 @@ class AppContainer extends Component {
     render(){
         return (
             <View style={{flex: 1}}>
-                <DayContainer/>
-                <WeekContainer/>
+                <DayContainer style={{flex: 2}}/>
+                <WeekContainer style={{flex: 1}}/>
             </View>
         )
     }
 }
-  
-  const mapStateToProps = state => {
-      console.log(state)
-        return {
-            day: state.day,
-            week: state.week
-        };
-  };
-  
-  const mapDispatchToProps = {
+
+const mapStateToProps = state => {
+    return {
+        day: state.day,
+        week: state.week
+    };
+};
+
+const mapDispatchToProps = {
     getWeather,
     getWeekForcast
-  };
-  
-  export default connect(mapStateToProps, mapDispatchToProps)(AppContainer);
-  
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(AppContainer);

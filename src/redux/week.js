@@ -11,7 +11,6 @@ const initialState = {
 }
 
 export function week_reducer(state = initialState, action) {
-    console.log('FART', action)
     switch(action.type){
         case GET_WEEK_WEATHER:
             return {...state, loading: true}

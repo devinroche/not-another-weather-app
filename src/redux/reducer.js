@@ -27,7 +27,6 @@ export function day_reducer(state = initialState, action) {
 }
 
 export function getWeather(lat, lon) {
-    console.log(lat, lon)
     return {
         type: GET_WEATHER,
         payload: {

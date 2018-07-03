@@ -1,8 +1,6 @@
 import React, {Component} from 'react';
 import {View, Text, StyleSheet} from 'react-native';
 import {connect} from 'react-redux';
-import {getWeather} from './../redux/reducer';
-import {getWeekForcast} from './../redux/week';
 
 import Day from '../components/Day'
 
@@ -16,14 +14,11 @@ class DayContainer extends Component {
         )
     }
 }
-  
+
 const mapStateToProps = state => {
-    console.log(state)
     return {
         day: state.day,
     };
 };
-  
-  
-  export default connect(mapStateToProps, mapDispatchToProps)(DayContainer);
-  
+
+export default connect(mapStateToProps)(DayContainer);

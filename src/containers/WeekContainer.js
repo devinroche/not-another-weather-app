@@ -1,28 +1,25 @@
 import React, {Component} from 'react';
 import {View, Text, StyleSheet} from 'react-native';
 import {connect} from 'react-redux';
-import {getWeather} from './../redux/reducer';
-import {getWeekForcast} from './../redux/week';
 
 import Week from '../components/Week'
 
 class WeekContainer extends Component {
     render(){
         const { week } = this.props
+        console.log(week)
         return (
             <View style={{flex: 1}}>
-                {week.list !== undefined ? <Week {...this.props} /> : ""}
+                {week.list && week.list.length > 0 ? <Week {...this.props} /> : ""}
             </View>
         )
     }
 }
-  
+
 const mapStateToProps = state => {
-    console.log(state)
     return {
         week: state.week
     };
 };
-  
-export default connect(mapStateToProps, mapDispatchToProps)(WeekContainer);
-  
+
+export default connect(mapStateToProps)(WeekContainer);

@@ -1,9 +1,6 @@
 import React, {Component} from 'react';
-import {View, Text, StyleSheet} from 'react-native';
-import {connect} from 'react-redux';
+import {View} from 'react-native';
 import Footer from './Footer';
-import Header from './Header'
-import Body from './Body'
 
 class Week extends Component {
     render(){
@@ -14,6 +11,5 @@ class Week extends Component {
         )
     }
 }
-  
+
 export default Week
-  

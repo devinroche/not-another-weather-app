@@ -4,10 +4,9 @@ import {connect} from 'react-redux';
 
 class Footer extends Component {
     render(){
-        console.log(this.props)
         const { weather } = this.props
         return (
-            <View style={styles.bottom}>
+            <View style={{flex: 1}}>
                 <Text style={styles.small}>footer</Text> 
             </View>
         )
@@ -24,8 +23,8 @@ class Footer extends Component {
     bottom: {
         flex: 1,
         backgroundColor: 'rebeccapurple',
-        alignItems: 'center',
-        justifyContent: 'flex-start',
+        // alignItems: 'center',
+        // justifyContent: 'flex-start',
     }
   });
   

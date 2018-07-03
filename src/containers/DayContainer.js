@@ -8,7 +8,7 @@ class DayContainer extends Component {
     render(){
         const { day } = this.props
         return (
-            <View style={{flex: 1}}>
+            <View style={{flex: 3}}>
                 {day.weather.main !== undefined ? <Day {...this.props} /> : ""}
             </View>
         )

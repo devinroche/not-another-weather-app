@@ -6,7 +6,7 @@ class Footer extends Component {
     render(){
         const { weather } = this.props
         return (
-            <View style={{flex: 1}}>
+            <View style={styles.bottom}>
                 <Text style={styles.small}>footer</Text> 
             </View>
         )

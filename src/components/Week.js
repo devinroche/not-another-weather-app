@@ -1,13 +1,13 @@
 import React, {Component} from 'react';
-import {View} from 'react-native';
-import Footer from './Footer';
+import {View, Text} from 'react-native';
+import DisplayWeek from './DisplayWeek';
 
 class Week extends Component {
     render(){
-        console.log(this.props)
         return (
             <View style={{flex: 1}}>
-                <Footer {...this.props}/>
+                <Text>Hi</Text>
+                <DisplayWeek {...this.props}/>
             </View>
         )
     }

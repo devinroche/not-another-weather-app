@@ -32,7 +32,7 @@ export function getWeekForcast(lat, lon) {
         type: GET_WEEK_WEATHER,
         payload: {
             request: {
-                url: `data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${api_key}`
+                url: `data/2.5/forecast?lat=${lat}&lon=${lon}&units=imperial&appid=${api_key}`
             }
         }
     }

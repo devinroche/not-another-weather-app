@@ -6,6 +6,7 @@ import {getWeekForcast} from './../redux/week';
 
 import DayContainer from './DayContainer';
 import WeekContainer from './WeekContainer';
+import ButtonContainer from './ButtonContainer';
 
 class AppContainer extends Component {
     componentDidMount() {
@@ -14,7 +15,6 @@ class AppContainer extends Component {
                 this.props.getWeather(position.coords.latitude, position.coords.longitude)
                 this.props.getWeekForcast(position.coords.latitude, position.coords.longitude)
             },
-            (error) => this.setState({ error: error.message }),
             {enableHighAccuracy: true, timeout: 20000, maximumAge: 1000 },
         );
     }
@@ -22,7 +22,7 @@ class AppContainer extends Component {
         return (
             <View style={{flex: 1, flexDirection: 'column'}}>
                 <DayContainer style={{flex: 2}}/>
-                <WeekContainer style={{flex: 1}}/>
+                <ButtonContainer style={{flex: 1}} navigation={this.props.navigation}/>
             </View>
         )
     }

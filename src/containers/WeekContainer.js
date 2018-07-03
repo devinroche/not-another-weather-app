@@ -7,9 +7,8 @@ import Week from '../components/Week'
 class WeekContainer extends Component {
     render(){
         const { week } = this.props
-        console.log(week.week.cod === '200')
         return (
-            <View style={{flex: 1}}>
+            <View style={{flex: 4}}>
                 {week.week.cod === '200' ? <Week {...this.props.week} /> : ""}
             </View>
         )

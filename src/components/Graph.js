@@ -1,7 +1,11 @@
-import React from 'react'
-import {View, Text, Animated, StyleSheet, Easing } from 'react-native'
-import { VictoryAxis, VictoryArea, VictoryChart, VictoryBar, VictoryCandlestick, VictoryStack,VictoryLabel, VictoryTheme } from "victory-native";
-import {G} from 'react-native-svg';
+import React from 'react';
+import {
+    View, Text, Animated, StyleSheet, Easing,
+} from 'react-native';
+import {
+    VictoryAxis, VictoryArea, VictoryChart, VictoryBar, VictoryCandlestick, VictoryStack, VictoryLabel, VictoryTheme,
+} from 'victory-native';
+import { G } from 'react-native-svg';
 
 
 // class BarChartExample extends React.PureComponent {
@@ -36,41 +40,43 @@ const days = {
     4: 'Thurs',
     5: 'Fri',
     6: 'Sat',
-    7: 'Sun'
-}
+    7: 'Sun',
+};
 
 class BarChartExample extends React.Component {
-    constructor () {
-        super()
-        const width = {pts: 30}
+    constructor() {
+        super();
+        const width = { pts: 30 };
         this.state = {
-          pts: new Animated.Value(width.pts)
-        //   ast: new Animated.Value(width.ast),
-        //   reb: new Animated.Value(width.reb)
-        }
-      }
-      
-      handeleAnimation () {
-        const timing = Animated.timing
-        const width = {pts: 90}
-        const indicators = ['pts']
-        Animated.parallel(indicators.map(item => {
-          return timing(this.state[item], {toValue: width[item]})
-        })).start()
-      }
-      
-      render () {
-       const {pts} = this.state
-      
-       return (
-          <View>
-           {pts &&
-              <Animated.View style={[styles.bar, styles.points, {width: pts}]} />
-            }
-            <Text onPress={this.handeleAnimation.bind(this)}>Button</Text>
-          </View>
-       )
-      }
+            pts: new Animated.Value(width.pts),
+            //   ast: new Animated.Value(width.ast),
+            //   reb: new Animated.Value(width.reb)
+        };
     }
 
-    export default BarChartExample
+    handeleAnimation() {
+        const timing = Animated.timing;
+        const width = { pts: 90 };
+        const indicators = ['pts'];
+        Animated.parallel(indicators.map(item => timing(this.state[item], { toValue: width[item] }))).start();
+    }
+
+    render() {
+        const { pts } = this.state;
+
+        return (
+            <View>
+                {pts
+              && <Animated.View style={[styles.bar, styles.points, { width: pts }]} />
+                }
+                <Text onPress={this.handeleAnimation.bind(this)}>
+Button
+
+
+                </Text>
+            </View>
+        );
+    }
+}
+
+export default BarChartExample;

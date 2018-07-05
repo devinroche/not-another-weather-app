@@ -1,19 +1,18 @@
-import React, {Component} from 'react';
-import {View, Text, StyleSheet} from 'react-native';
-import {connect} from 'react-redux';
-import Header from './Header'
-import Body from './Body'
+import React, { Component } from 'react';
+import { View, Text } from 'react-native';
+import Header from './Header';
+import Body from './Body';
 
 class Weather extends Component {
-    render(){
+    render() {
+        const {day} = this.props
         return (
-            <View style={{flex: 1}}>
-                <Header {...this.props.day}/>
-                <Body {...this.props.day}/>
+            <View style={{ flex: 1 }}>
+                <Header {day} />
+                <Body {day} />
             </View>
-        )
+        );
     }
 }
-  
-export default Weather
-  
+
+export default Weather;

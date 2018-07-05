@@ -6,7 +6,7 @@ import { Font } from 'expo';
 import AppContainer from './src/containers/AppContainer';
 import HomeScreen from './src/screens/Home'
 import { createStackNavigator } from 'react-navigation';
-import Fortcast from './src/screens/Forcast'
+import Forecast from './src/screens/Forecast'
 
 export default class App extends React.Component {
   componentDidMount(){
@@ -32,7 +32,7 @@ export default class App extends React.Component {
 
 const Navigator = createStackNavigator({
   Home: { screen: HomeScreen },
-  Forcast: { screen: Fortcast },
+  Forecast: { screen: Forecast },
   },{
     initialRouteName: 'Home',
   }

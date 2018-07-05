@@ -2,18 +2,17 @@ import { createStore, applyMiddleware, combineReducers } from 'redux';
 import axios from 'axios';
 import axiosMiddleware from 'redux-axios-middleware';
 
-import {day_reducer} from './reducer';
-import {week_reducer} from './week';
+import { dayReducer } from './reducer';
+import { weekReducer } from './week';
 
-const rootReducer = combineReducers({day: day_reducer, week: week_reducer})
+const rootReducer = combineReducers({ day: dayReducer, week: weekReducer });
 
 
 const client = axios.create({
-  baseURL: 'https://api.openweathermap.org/'
-})
-
+    baseURL: 'https://api.openweathermap.org/',
+});
 
 
 const store = createStore(rootReducer, applyMiddleware(axiosMiddleware(client)));
 
-export default store
+export default store;

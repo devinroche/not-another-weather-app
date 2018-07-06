@@ -1,29 +1,17 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { View, StyleSheet } from 'react-native';
 import { connect } from 'react-redux';
-import { boxContent } from '../components/NavButtons/config';
+import PropTypes from 'prop-types';
+import boxContent from '../components/NavButtons/config';
 import Box from '../components/NavButtons/Box';
 
-// class ButtonContainer extends Component {
-//     render() {
-//         const { week } = this.props;
-//         return (
-//             <View style={styles.container}>
-//                 { week.week.cod === '200'
-//                     ? boxContent.map((el, idx) => <Box values={el} key={idx} navigation={this.props.navigation} />)
-//                     : ''
-//                 }
-//             </View>
-//         );
-//     }
-// }
-
 const ButtonContainer = (props) => {
-    const { week } = props;
+    const { week, navigation } = props;
+    console.log(typeof week, week)
     return (
         <View style={styles.container}>
             { week.week.cod === '200'
-                ? boxContent.map((el, idx) => <Box values={el} key={idx} navigation={this.props.navigation} />)
+                ? boxContent.map((el, idx) => <Box values={el} key={idx} navigation={navigation} />)
                 : ''
             }
         </View>
@@ -45,3 +33,8 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
     },
 });
+
+ButtonContainer.propTypes = {
+    week: PropTypes.func.isRequired,
+    navigation: PropTypes.shape({ navigate: PropTypes.func }).isRequired,
+};

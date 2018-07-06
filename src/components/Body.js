@@ -1,23 +1,6 @@
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 
-// class Body extends Component {
-//     render() {
-//         const { day } = this.props;
-//         return (
-//           <View style={[styles.mid]}>
-//               <Text style={styles.header}>
-//                   {Math.round(day.weather.main.temp)}
-// &#176;
-//                 </Text>
-//                 <Text style={styles.subheader}>
-//                     {day.weather.weather[0].main}
-//             </Text>
-//             </View>
-//         );
-//     }
-// }
-
 const Body = (props) => {
     const { day } = props;
     return (

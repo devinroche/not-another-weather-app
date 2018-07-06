@@ -3,7 +3,7 @@ import { View } from 'react-native';
 import { connect } from 'react-redux';
 import { getWeather } from '../redux/reducer';
 import { getWeekForecast } from '../redux/week';
-
+import PropTypes from 'prop-types';
 import DayContainer from './DayContainer';
 import ButtonContainer from './ButtonContainer';
 
@@ -38,6 +38,12 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = {
     getCurrWeather: getWeather,
     getWeekWeather: getWeekForecast,
+};
+
+AppContainer.propTypes = {
+    getCurrWeather: PropTypes.func.isRequired,
+    getWeekWeather: PropTypes.func.isRequired,
+    navigation: PropTypes.shape({ navigate: PropTypes.func }).isRequired,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(AppContainer);

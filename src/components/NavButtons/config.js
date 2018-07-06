@@ -1,4 +1,4 @@
-export const boxContent = [
+const boxContent = [
     {
         title: 'Forecast',
         colors: ['#65cbf7', '#34ace0'],
@@ -16,3 +16,5 @@ export const boxContent = [
         colors: ['#ffdbf0', '#EFB1D6'],
     },
 ];
+
+export default boxContent;

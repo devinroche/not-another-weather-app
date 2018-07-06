@@ -4,23 +4,6 @@ import {
 } from 'react-native';
 import { LinearGradient } from 'expo';
 
-// class Box extends Component {
-//     render() {
-//         const { values, navigation } = this.props;
-//         return (
-//             <TouchableHighlight style={[styles.container, { overflow: 'hidden' }]} activeOpacity={1} underlayColor="white" onPress={() => navigation.navigate('Forecast')}>
-//                 <View style={styles.container}>
-//                     <LinearGradient colors={values.colors} style={styles.gradientContainer}>
-//                         <Text style={styles.header}>
-//                             {values.title}
-//                         </Text>
-//                     </LinearGradient>
-//                 </View>
-//             </TouchableHighlight>
-//         );
-//     }
-// }
-
 const Box = (props) => {
     const { values, navigation } = props;
     return (

@@ -19,7 +19,7 @@ const DayContainer = (props) => {
     const { day } = props;
     return (
         <View style={{ flex: 3 }}>
-            {day.weather.main !== undefined ? <Day {props} /> : ''}
+            {day.weather.main !== undefined ? <Day {...props} /> : ''}
         </View>
     )
 }

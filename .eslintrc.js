@@ -4,6 +4,9 @@ module.exports = {
         "react",
         "react-native"
     ],
+    "ecmaFeatures": {
+        "jsx": true
+    },
     "rules": {
         "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
         "react-native/no-unused-styles": 2,

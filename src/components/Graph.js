@@ -43,40 +43,45 @@ const days = {
     7: 'Sun',
 };
 
-class BarChartExample extends React.Component {
-    constructor() {
-        super();
-        const width = { pts: 30 };
-        this.state = {
-            pts: new Animated.Value(width.pts),
-            //   ast: new Animated.Value(width.ast),
-            //   reb: new Animated.Value(width.reb)
-        };
-    }
+// class BarChartExample extends React.Component {
+//     constructor() {
+//         super();
+//         const width = { pts: 30 };
+//         this.state = {
+//             pts: new Animated.Value(width.pts),
+//             //   ast: new Animated.Value(width.ast),
+//             //   reb: new Animated.Value(width.reb)
+//         };
+//     }
 
-    handeleAnimation() {
-        const timing = Animated.timing;
-        const width = { pts: 90 };
-        const indicators = ['pts'];
-        Animated.parallel(indicators.map(item => timing(this.state[item], { toValue: width[item] }))).start();
-    }
+//     handeleAnimation() {
+//         const timing = Animated.timing;
+//         const width = { pts: 90 };
+//         const indicators = ['pts'];
+//         Animated.parallel(indicators.map(item => timing(this.state[item], { toValue: width[item] }))).start();
+//     }
 
-    render() {
-        const { pts } = this.state;
+//     render() {
+//         const { pts } = this.state;
 
-        return (
-            <View>
-                {pts
-              && <Animated.View style={[styles.bar, styles.points, { width: pts }]} />
-                }
-                <Text onPress={this.handeleAnimation.bind(this)}>
-Button
+//         return (
+//             <View>
+//                 {pts
+//               && <Animated.View style={[styles.bar, styles.points, { width: pts }]} />
+//                 }
+//                 <Text onPress={this.handeleAnimation.bind(this)}>
+// Button
 
 
-                </Text>
-            </View>
-        );
-    }
+//                 </Text>
+//             </View>
+//         );
+//     }
+// }
+
+const BarChartExample = (props) => {
+    return (
+        <Text>hi</Text>
+    )
 }
-
 export default BarChartExample;

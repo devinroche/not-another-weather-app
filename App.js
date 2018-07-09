@@ -31,9 +31,8 @@ export default class App extends React.Component {
 }
 
 const Navigator = createStackNavigator({
-  Home: { screen: HomeScreen },
-  Forecast: { screen: Forecast },
-  },{
+    Home: { screen: HomeScreen },
+    Forecast: { screen: Forecast },
+},{
     initialRouteName: 'Home',
-  }
-);
+});

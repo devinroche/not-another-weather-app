@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { View, StyleSheet } from 'react-native';
-import BarChartExample from './Graph';
+import PropTypes from 'prop-types';
+import Chart from './Graph';
 
 class DisplayWeek extends Component {
     render() {
@@ -8,22 +9,21 @@ class DisplayWeek extends Component {
         const dateStore = {};
         week.list.map((el) => {
             const time = new Date(el.dt * 1000).getDate();
-            return dateStore[time]
-                ? dateStore[time].push(el.main.temp)
-                : dateStore[time] = [el.main.temp];
+            const retVal = dateStore[time] ? dateStore[time].push(el.main.temp) : dateStore[time] = [el.main.temp];
+            return retVal;
         });
         const finalArr = [];
         for (const field in dateStore) {
             const sortedArr = dateStore[field].sort((a, b) => a - b);
             finalArr.push({
                 x: Math.round(sortedArr[sortedArr.length - 1] + sortedArr[0]) / 2,
-                y: Math.round(sortedArr[sortedArr.length - 1] - sortedArr[0]),
+                y: Math.round(sortedArr[sortedArr.length - 1]),
             });
         }
-
+        console.log(finalArr);
         return (
             <View style={styles.bottom}>
-                <BarChartExample data={finalArr} />
+                <Chart data={finalArr} />
             </View>
         );
     }
@@ -36,3 +36,8 @@ const styles = StyleSheet.create({
         flex: 1,
     },
 });
+
+
+DisplayWeek.propTypes = {
+    week: PropTypes.object.isRequired,
+};

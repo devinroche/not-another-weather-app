@@ -1,4 +1,4 @@
-export const weatherConditions = {
+const weatherConditions = {
     Rain: {
         color: '#005BEA',
         title: 'Raining',
@@ -49,3 +49,5 @@ export const weatherConditions = {
         icon: 'weather-fog',
     },
 };
+
+export default weatherConditions;

@@ -1,87 +1,63 @@
 import React from 'react';
-import {
-    View, Text, Animated, StyleSheet, Easing,
-} from 'react-native';
-import {
-    VictoryAxis, VictoryArea, VictoryChart, VictoryBar, VictoryCandlestick, VictoryStack, VictoryLabel, VictoryTheme,
-} from 'victory-native';
-import { G } from 'react-native-svg';
+import { View, StyleSheet } from 'react-native';
+import { BarChart, XAxis } from 'react-native-svg-charts'
+import { Text } from 'react-native-svg'
+import * as scale from 'd3-scale'
+import PropTypes from 'prop-types';
 
 
-// class BarChartExample extends React.PureComponent {
-
-//     render() {
-//         console.log(this.props.data.map(el => {
-//             return {x: el.x.toString(), y: el.y}
-//         }))
-//         return (
-//             <VictoryChart domainPadding={{ x: 25 }}>
-//                 <VictoryBar
-//                     categories={{
-//                         x: this.props.data.map(el => el.x.toString())
-//                     }}
-//                     style={{ data: { fill: "#c43a31" } }}
-//                     data={this.props.data.map(el => {
-//                         return {x: el.x.toString(), y: el.y}
-//                     })}
-//                 />
-//             </VictoryChart>
-//         )
-//     }
-
-// }
-
-// export default BarChartExample
-
-const days = {
-    1: 'Mon',
-    2: 'Tues',
-    3: 'Wed',
-    4: 'Thurs',
-    5: 'Fri',
-    6: 'Sat',
-    7: 'Sun',
-};
-
-// class BarChartExample extends React.Component {
-//     constructor() {
-//         super();
-//         const width = { pts: 30 };
-//         this.state = {
-//             pts: new Animated.Value(width.pts),
-//             //   ast: new Animated.Value(width.ast),
-//             //   reb: new Animated.Value(width.reb)
-//         };
-//     }
-
-//     handeleAnimation() {
-//         const timing = Animated.timing;
-//         const width = { pts: 90 };
-//         const indicators = ['pts'];
-//         Animated.parallel(indicators.map(item => timing(this.state[item], { toValue: width[item] }))).start();
-//     }
-
-//     render() {
-//         const { pts } = this.state;
-
-//         return (
-//             <View>
-//                 {pts
-//               && <Animated.View style={[styles.bar, styles.points, { width: pts }]} />
-//                 }
-//                 <Text onPress={this.handeleAnimation.bind(this)}>
-// Button
-
-
-//                 </Text>
-//             </View>
-//         );
-//     }
-// }
-
-const BarChartExample = (props) => {
-    return (
-        <Text>hi</Text>
+const Chart = (props) => {
+    const { data } = props;
+    const Labels = ({ x, y, bandwidth, data }) => (
+        data.map((value, index) => (
+            <Text
+                key={ index }
+                x={ x(index) + (bandwidth / 2) }
+                y={ 190 }
+                fontSize={ 12 }
+                fill={ 'black' }
+                alignmentBaseline={ 'middle' }
+                textAnchor={ 'middle' }
+            >
+                {value}&#176;
+            </Text>
+        ))
     )
-}
-export default BarChartExample;
+    return (
+        <View style={styles.main}>
+            <BarChart
+                style={{ height: 200, width: 250 }}
+                data={ data.map(el => el.y) }
+                spacingInner={0.5}
+                svg={{
+                    fill: 'rgb(134, 65, 244)',
+                }}
+                contentInset={{ top: 30, bottom: 30 }}
+                gridMin={0}
+            />
+            {/* <Labels/> */}
+            <XAxis
+                style={{ marginTop: 10 }}
+                data={ data }
+                scale={scale.scaleBand}
+                formatLabel={ value => `${data[value].y}\u00B0` }
+                labelStyle={{color: 'black'}}
+            />
+            {/* </BarChart> */}
+        </View>
+    );
+};
+export default Chart;
+
+const styles = StyleSheet.create({
+    main: {
+        flex: 1,
+        alignItems: 'center',
+        height: 200, 
+        padding: 20,
+    }
+});
+
+Chart.propTypes = {
+    data: PropTypes.arrayOf(PropTypes.objectOf(PropTypes.number)).isRequired,
+};

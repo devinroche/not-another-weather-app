@@ -1,25 +1,14 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { View } from 'react-native';
 import { connect } from 'react-redux';
-
+import PropTypes from 'prop-types';
 import Week from '../components/Week';
-
-// class WeekContainer extends Component {
-//     render() {
-//         const { week } = this.props;
-//         return (
-//             <View style={{ flex: 4 }}>
-//                 {week.week.cod === '200' ? <Week {...this.props.week} /> : ''}
-//             </View>
-//         );
-//     }
-// }
 
 const WeekContainer = (props) => {
     const { week } = props;
     return (
         <View style={{ flex: 4 }}>
-            {week.week.cod === '200' ? <Week {...props.week} /> : ''}
+            {week.week.cod === '200' ? <Week {...week} /> : ''}
         </View>
     );
 };
@@ -29,3 +18,7 @@ const mapStateToProps = state => ({
 });
 
 export default connect(mapStateToProps)(WeekContainer);
+
+WeekContainer.propTypes = {
+    week: PropTypes.object.isRequired,
+};

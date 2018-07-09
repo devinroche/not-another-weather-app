@@ -7,7 +7,6 @@ import Box from '../components/NavButtons/Box';
 
 const ButtonContainer = (props) => {
     const { week, navigation } = props;
-    console.log(typeof week, week)
     return (
         <View style={styles.container}>
             { week.week.cod === '200'
@@ -35,6 +34,6 @@ const styles = StyleSheet.create({
 });
 
 ButtonContainer.propTypes = {
-    week: PropTypes.func.isRequired,
+    week: PropTypes.object.isRequired,
     navigation: PropTypes.shape({ navigate: PropTypes.func }).isRequired,
 };

@@ -1,4 +1,4 @@
-const api_key = '7b1d07389cace374d49bf64303a8b089';
+const apiKey = '7b1d07389cace374d49bf64303a8b089';
 
 export const GET_WEATHER = 'LOAD';
 export const GET_WEATHER_SUCCESS = 'LOAD_SUCCESS';
@@ -31,7 +31,7 @@ export function getWeather(lat, lon) {
         type: GET_WEATHER,
         payload: {
             request: {
-                url: `data/2.5/weather?lat=${lat}&lon=${lon}&units=imperial&appid=${api_key}`,
+                url: `data/2.5/weather?lat=${lat}&lon=${lon}&units=imperial&appid=${apiKey}`,
             },
         },
     };

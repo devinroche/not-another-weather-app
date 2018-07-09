@@ -1,5 +1,6 @@
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
+import PropTypes from 'prop-types';
 
 const Body = (props) => {
     const { day } = props;
@@ -36,3 +37,7 @@ const styles = StyleSheet.create({
         color: '#2c3e50',
     },
 });
+
+Body.propTypes = {
+    day: PropTypes.any.isRequired,
+};

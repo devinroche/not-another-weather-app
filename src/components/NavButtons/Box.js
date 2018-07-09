@@ -2,12 +2,18 @@ import React from 'react';
 import {
     View, Text, StyleSheet, TouchableHighlight,
 } from 'react-native';
+import PropTypes from 'prop-types';
 import { LinearGradient } from 'expo';
 
 const Box = (props) => {
     const { values, navigation } = props;
     return (
-        <TouchableHighlight style={[styles.container, { overflow: 'hidden' }]} activeOpacity={1} underlayColor="white" onPress={() => navigation.navigate('Forecast')}>
+        <TouchableHighlight
+            style={[styles.container, { overflow: 'hidden' }]}
+            activeOpacity={1}
+            underlayColor="white"
+            onPress={() => navigation.navigate('Forecast')}
+        >
             <View style={styles.container}>
                 <LinearGradient colors={values.colors} style={styles.gradientContainer}>
                     <Text style={styles.header}>
@@ -49,3 +55,8 @@ const styles = StyleSheet.create({
         height: '100%',
     },
 });
+
+Box.propTypes = {
+    values: PropTypes.object.isRequired,
+    navigation: PropTypes.object.isRequired,
+};

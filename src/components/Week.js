@@ -8,6 +8,6 @@ const Week = (props) => {
             <DisplayWeek {...props} />
         </View>
     );
-}
+};
 
 export default Week;

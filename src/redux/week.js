@@ -1,4 +1,4 @@
-const api_key = '7b1d07389cace374d49bf64303a8b089';
+const apiKey = '7b1d07389cace374d49bf64303a8b089';
 
 export const GET_WEEK_WEATHER = 'WEEK_LOAD';
 export const GET_WEEK_WEATHER_SUCCESS = 'WEEK_LOAD_SUCCESS';
@@ -32,7 +32,7 @@ export function getWeekForecast(lat, lon) {
         type: GET_WEEK_WEATHER,
         payload: {
             request: {
-                url: `data/2.5/forecast?lat=${lat}&lon=${lon}&units=imperial&appid=${api_key}`,
+                url: `data/2.5/forecast?lat=${lat}&lon=${lon}&units=imperial&appid=${apiKey}`,
             },
         },
     };

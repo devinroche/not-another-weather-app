@@ -23,14 +23,3 @@ i got the ui design from dribble. if i publish this app i am planning on changin
 
 ### api
 i used the [openweathermap api](https://openweathermap.org/) to get data.
-
-## To Do
-- [x] get location access
-- [x] get current weather
-- [x] get 5 day forecast
-- [x] build entry page
-- [ ] prop validation 
-- [ ] build graph weekly forecast page
-- [ ] clothing recommendation
-- [ ] hourly forecast
-- [ ] replace radar

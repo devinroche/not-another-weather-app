@@ -20,5 +20,7 @@ module.exports = {
         "react/no-array-index-key":0,
         "max-len": [2, 140, 4],
         "react/jsx-indent-props": ["error", 4],
+        "react/jsx-curly-brace-presence": 0,
+        "react/jsx-curly-spacing": 0,
     }
 };

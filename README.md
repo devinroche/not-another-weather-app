@@ -17,7 +17,7 @@ try to auto fix: ```npm run lintfix```
 list of stuffs and recognition.
 
 ### ui
-i got the ui design from dribble. if i publish this app i am planning on changing it. [made by andrea hock, shes really good!](https://dribbble.com/andreahock)
+i got the ui design from dribble. if i publish this app i am planning on changing it. [made by andrea hock](https://dribbble.com/andreahock)
 
 ![ui](https://cdn.dribbble.com/users/1977127/screenshots/4247769/daily_ui_challenge_037_800x600.png)
 
